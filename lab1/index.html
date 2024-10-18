@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="index.css">
+    <title>Custom Task Manager</title>
+</head>
+<body>
+    <header id="tm-app-header">
+        <span id="tm-app-name">Custom Task Manager</span>
+        <div id="tm-app-header__right-block">
+            <div class="user-info">
+                <img src="./images/keanu.jpg" alt="User avatar" class="user-info__avatar" />
+                <span class="user-info__username">Keanu Reeves</span>
+            </div>
+        </div>
+    </header>
+    <main id="tm-app-base">
+        <ul class="tasklists-list">
+            <li class="tasklist">
+                <h3 class="tasklist__header">
+                    К выполнению
+                </h3>
+                <ul class="tasklist__tasks-list">
+                    <li class="task">
+                        <span class="task__name">Сдать хвост по Федоруку</span>
+                        <div class="task__controls">
+                            <button type="button" class="task-move-back">
+                                <img src="./assets/left-arrow.svg" alt="Move task to previous tasklist">
+                            </button>
+                            <button type="button" class="task-move-forward">
+                                <img src="./assets/right-arrow.svg" alt="Move task to next tasklist">
+                            </button>
+                            <button type="button" class="task-edit">
+                                <img src="./assets/edit.svg" alt="Edit task">
+                            </button>
+                            <button type="button" class="task-delete">
+                                <img src="./assets/delete-button.svg" alt="Delete task">
+                            </button>
+                        </div>
+                    </li>
+                </ul>
+                <button type="button" class="tasklist__add-task-btn">
+                    Добавить карточку...
+                </button>
+            </li>
+        </ul>
+    </main>
+</body>
+</html>

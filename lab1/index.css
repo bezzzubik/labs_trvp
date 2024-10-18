@@ -1,0 +1,130 @@
+/* fonts */
+:root{
+ --tm-app-font-family: 'Fira Sans';
+ --tm-app-header-font-size: clamp(16px, 3vw, 48px);
+ --tm-app-tasklist-font-size-large: clamp(12px, 1.6vw, 36px);
+ --tm-app-tasklist-font-size-medium: clamp(10px, 1.25vw, 28px);
+}
+
+/* colors */
+:root{
+    --tm-app-cp-blue-10-op-45: #CBDFF473;
+    --tm-app-cp-blue-10-op-75: #CBDFF4BF;
+    --tm-app-cp-blue-10: #CBDFF4;
+    --tm-app-cp-blue-20: #93C4F5;
+    --tm-app-cp-blue-30: #7CBAF9;
+    --tm-app-cp-blue-50: #50A0F1;
+    --tm-app-cp-blue-70: #020275;
+    --tm-app-cp-blue-90: #01203F;
+
+    --tm-app-cp-seawave-30: #7FACAC;
+    --tm-app-cp-seawave-70: #053A47;
+
+    --tm-app-cp-white: #FFFFFF;
+
+    --tm-app-cp-black-op-12: #0000001F;
+
+    --tm-app-cp-grey-50: #3D3D3F;
+}
+
+/* light-theme */
+:root {
+    --tm-app-body-bg-start: var(--tm-app-cp-blue-30);
+    --tm-app-body-bg-end: var(--tm-app-cp-seawave-30);
+    --tm-app-header-text-color: var(--tm-app-cp-blue-70);
+    --tm-app-tasklist-header-text-color: var(--tm-app-cp-blue-70);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--tm-app-font-family);
+    font-weight: 400;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(var(--tm-app-body-bg-start), var(--tm-app-body-bg-end));
+    background-attachment: fixed;
+}
+
+#tm-app-header {
+    width: 100%;
+    box-sizing: border-box;
+    padding: max(3vh, 30px) max(2.5vw, 80px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: var(--tm-app-header-font-size);
+    color: var(--tm-app-header-text-color);
+}
+
+.user-info{
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    & > .user-info__avatar{
+        --avatar-size: clamp(40px, 6vw, 80px);
+        width: var(--avatar-size);
+        height: var(--avatar-size);
+        object-fit: cover;
+        object-position: center;
+        border: 2px solid var(--tm-app-cp-white);
+        border-radius: 50%;
+    }
+}
+
+#tm-app-base {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 max(2.5vw, 80px);
+}
+
+.tasklists-list{
+    width: 100%;
+    /* чтобы новые списки перепрыгивали на следующую строку и нормально отображались  */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    column-gap: calc(8% / 3);
+    row-gap: 3vh;
+
+    & > .tasklist{
+        width: 23%;
+        box-sizing: border-box;
+        padding: 14px;
+        border-radius: 10px;
+        background-color: var(--tm-app-cp-blue-10-op-75);
+        box-shadow: 2px 2px 4px var(--tm-app-cp-black-op-12);
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        & > .tasklist__header{
+            font-weight: 600;
+            font-size: var(--tm-app-tasklist-font-size-large);
+            color: var(--tm-app-tasklist-header-text-color);
+        }
+
+        & > .tasklist__add-task-btn{
+            border: none;
+            outline: none;
+            background: none;
+            text-align: left;
+            color: var(--tm-app-cp-grey-50);
+            font-size: var(--tm-app-tasklist-font-size-medium);
+            cursor: pointer;
+
+            &:hover{
+                font-weight: 600;
+            }
+        }
+    }
+}
